@@ -1,19 +1,24 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Router, withRouter } from 'react-router-dom'
+import Header from './components/Header';
 import HomeMenu from './components/HomeMenu';
 import './App.css';
 
-
-function App() {
+function App(props) {
   return (
     <div className="App">
       <div className="container">
-      <Router>
+
+        {
+          props.location.pathname === '/' ?
+            null :
+            <Header />
+        }
+        
         <HomeMenu />
-      </Router>
       </div>
     </div>
   );
 }
 
-export default App;
+export default withRouter(App);
