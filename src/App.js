@@ -5,6 +5,8 @@ import AllBeers from './components/AllBeers'
 import BeerDetails from './components/BeerDetails'
 import HomeMenu from './components/HomeMenu';
 import RandomBeer from './components/RandomBeer'
+import NewBeer from './components/NewBeer'
+
 import './App.css';
 
 class App extends React.Component {
@@ -21,11 +23,12 @@ class App extends React.Component {
             <Route exact path='/'>
               <HomeMenu />
             </Route>
-            <Route path='/beers'>
+            <Route exact path='/beers'>
               <AllBeers updateBeers={this.updateBeers} /> 
             </Route>
             <Route exact path="/random-beer" component={RandomBeer} />
-            <Route  path="/:id"n component={BeerDetails} />
+            <Route exact path="/new-beer" component={NewBeer} />
+            <Route  path="/:id"  component={BeerDetails} />
           </Switch>
         
         </div>
