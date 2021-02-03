@@ -1,0 +1,16 @@
+
+.large-grey{
+    color: gray;
+    font-size: 1.7rem;
+    opacity: 30%;
+}
+
+.bold{
+    font-weight: 900;
+}
+
+.muted{
+    color: rgb(182, 179, 179);
+    font-weight: 900;
+    font-size: 0.7rem;
+}

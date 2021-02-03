@@ -39,24 +39,26 @@ export default class AllBeers extends Component {
     render() {
         const beers = this.state.allBeers.map(beer => {
             return(
-                    <Link to={`/${beer._id}`} key={beer._id} className='text-center'>
-                        <Card style={{maxWidth:'14.5rem', minWidth: '14.5rem',maxHeight: '400px', minHeight: '400px'}}  className='mb-2'>
-                            <Card.Img variant="top" src={beer.image_url} className='mx-auto mt-5'/>
-                            <Card.Body>
-                                <Card.Title className='text-center'>{beer.name}</Card.Title>
-                                <Card.Text className='text-center'>
-                                    {beer.tagline}
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Link>
+                    <Col key={beer._id} className='col-sm-6 col-lg-4 mb-3'>
+                        <Link to={`/${beer._id}`}   >
+                            <Card style={{ Width: '18rem', height:'400px'}}  className='mb-2'>
+                                <Card.Img variant="top" src={beer.image_url} className='mx-auto mt-5'/>
+                                <Card.Body>
+                                    <Card.Title className='text-center'>{beer.name}</Card.Title>
+                                    <Card.Text className='text-center mb-5'>
+                                        {beer.tagline}
+                                    </Card.Text>
+                                </Card.Body>
+                            </Card>
+                        </Link>
+                    </Col>
             )
         })
         return (
             <div className='container'>
-                <CardDeck>
+                <Row className='mt-5'>
                     {this.state.isLoaded ? beers : "Loading...."}
-                </CardDeck>
+                </Row>
             </div>
         )
     }
