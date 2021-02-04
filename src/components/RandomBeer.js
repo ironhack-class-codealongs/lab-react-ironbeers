@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import './Beer.css';
 
 export default class RandomBeer extends Component {
 
@@ -41,7 +42,7 @@ export default class RandomBeer extends Component {
             return <div>Loading...</div>;
         } else {
             return (
-                <div>
+                <div className='single-beer'>
                     <img src={image_url} alt={name} />
                     <h2>{name}</h2>
                     <h4>{tagline}</h4>

@@ -42,12 +42,14 @@ export default class AllBeers extends Component {
         })
 
         return (
-            <React.Fragment>
-                <input type='text' name='search' value={this.state.search} onChange={this.handleInput} />
+            <section id='beers-list'>
+                <div className='search'>
+                    <input type='text' name='search' value={this.state.search} onChange={this.handleInput} placeholder='Search beers' />
+                </div>
                 <div>
                     {beersList}
                 </div>
-            </React.Fragment>
+            </section>
         )
     }
 }

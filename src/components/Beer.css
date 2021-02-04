@@ -1,0 +1,10 @@
+.single-beer img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+}
+
+.single-beer {
+    padding: 20px 5%;
+}

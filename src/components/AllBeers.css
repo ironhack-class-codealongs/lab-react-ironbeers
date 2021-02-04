@@ -1,8 +1,27 @@
 .beer-item {
-    display: flex;
+    padding: 20px 5%;
     border-bottom: 1px solid grey;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
 }
 
 .beer-item img {
-    width: 50px;
+    height: 10em;
+    padding-right: 25px;
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+}
+
+.search input {
+    border: 1px solid #3dc4fc;
+    border-radius: 14px;
+    padding: 5px 10px;
+    margin-top: 20px;
+    margin-right: 5%;
+    margin-left: 5%
 }
