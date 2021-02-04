@@ -4,7 +4,6 @@ import axios from 'axios'
 import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import CardDeck from 'react-bootstrap/CardDeck'
 import './AllBeers.css'
 
 export default class AllBeers extends Component {
