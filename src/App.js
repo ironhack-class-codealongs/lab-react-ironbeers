@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, withRouter, Route, Link } from 'react-router-dom'
+import { Switch, withRouter, Route, Link } from 'react-router-dom'
 import Header from './components/Header'
 import AllBeers from './components/AllBeers'
 import BeerDetails from './components/BeerDetails'
