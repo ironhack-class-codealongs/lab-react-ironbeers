@@ -1,0 +1,4 @@
+.new-beer {
+    display: flex;
+    flex-direction: column;
+}
