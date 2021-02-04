@@ -65,7 +65,8 @@ class App extends React.Component {
               {this.handleErrorAndLoading}
             </Route>
             <Route path='/beers/:beerId' render={(props) => {
-              return <Beer {...props} beers={this.state.beers} />
+              return this.state.beers.length ? <Beer {...props} beers={this.state.beers} />
+              : 'Beer loading...'
               }}
             />
             <Route path='/random-beer' render={(props) => {
