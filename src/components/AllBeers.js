@@ -4,8 +4,31 @@ import './AllBeers.css';
 
 export default class AllBeers extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            search: '',
+            beers: this.props.beers
+        }
+    }
+
+    handleInput = e => {
+        this.setState({
+            search: e.target.value
+        })
+        fetch(`https://ih-beers-api2.herokuapp.com/beers/search?q=${e.target.value}`)
+        .then(response => {
+            return response.json()
+        })
+        .then(result => {
+            this.setState({
+                beers: result
+            })
+        })
+    }
+
     render() {
-        const beersList = this.props.beers.map(beer => {
+        const beersList = this.state.beers.map(beer => {
             return (
                 <div key={beer._id} className='beer-item'>
                     <img src={beer.image_url} alt={beer.name} />
@@ -19,9 +42,12 @@ export default class AllBeers extends Component {
         })
 
         return (
-            <div>
-                {beersList}
-            </div>
+            <React.Fragment>
+                <input type='text' name='search' value={this.state.search} onChange={this.handleInput} />
+                <div>
+                    {beersList}
+                </div>
+            </React.Fragment>
         )
     }
 }
