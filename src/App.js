@@ -6,6 +6,7 @@ import './App.css';
 import AllBeers from './components/AllBeers';
 import Beer from './components/Beer';
 import RandomBeer from './components/RandomBeer';
+import NewBeer from './components/NewBeer';
 
 class App extends React.Component {
 
@@ -69,6 +70,10 @@ class App extends React.Component {
             />
             <Route path='/random-beer' render={(props) => {
               return <RandomBeer {...props} />
+            }}
+            />
+            <Route path='/new-beer' render={(props) => {
+              return <NewBeer {...props} />
             }}
             />
           </Switch>
