@@ -1,0 +1,8 @@
+.beer-item {
+    display: flex;
+    border-bottom: 1px solid grey;
+}
+
+.beer-item img {
+    width: 50px;
+}
