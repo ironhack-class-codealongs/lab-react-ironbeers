@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
 import './NewBeer.css';
 
 export default class NewBeer extends Component {
@@ -14,7 +13,6 @@ export default class NewBeer extends Component {
             brewers_tips: '',
             attenuation_level: 0,
             contributed_by: '',
-            redirectToBeers: false
         }
     }
 
@@ -45,16 +43,14 @@ export default class NewBeer extends Component {
                 })
         })
         .then(() => {
-            this.setState({
-                redirectToBeers: true
-            })
+            this.props.getData();
+        })
+        .then(() => {
+            this.props.history.push('/beers');
         })
     }
 
     render() {
-        if (this.state.redirectToBeers === true) {
-           return <Redirect to='/beers' />
-        } else {
             return (
                 <form action={this.props.action} method={this.props.method} onSubmit={this.handleSubmit} className='new-beer'>
                     <label>Name</label>
@@ -74,7 +70,6 @@ export default class NewBeer extends Component {
                     <button type='submit'>Create</button>
                 </form>
             )
-        }
     }
 }
 

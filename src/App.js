@@ -19,7 +19,7 @@ class App extends React.Component {
     }
   }
 
-  componentDidMount() {
+  retrieveBeers = () => {
     fetch('https://ih-beers-api2.herokuapp.com/beers')
         .then(response => {
             return response.json()
@@ -38,6 +38,10 @@ class App extends React.Component {
                 });
             }
         )
+  }
+
+  componentDidMount() {
+    this.retrieveBeers();
   }
 
   handleErrorAndLoading = () => {
@@ -74,7 +78,7 @@ class App extends React.Component {
             }}
             />
             <Route path='/new-beer' render={(props) => {
-              return <NewBeer {...props} />
+              return <NewBeer {...props} getData={() => {this.retrieveBeers()}} />
             }}
             />
           </Switch>
